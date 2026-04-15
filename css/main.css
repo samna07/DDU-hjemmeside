@@ -1,0 +1,124 @@
+:root{
+  /* css variabler */
+  --Backgrund_titel: #FFF1D4;
+  --Text_color: rgb(0,0,0); 
+  --Menu_backgrund_color:#D2E4EF;
+  --Main_knap_color:#FFFFFF;
+  --Game_knap_color:#737373; 
+  --info_bord_color:#D9D9D9;
+  --Quiz_quistion_backgrund_color:#F6C967;
+
+
+  --brand: rgb(80, 185, 255);
+  --bg: #2C2E6D;
+  --fg: #111;
+  --radius: 12px;
+  --space: 20px;
+  --shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  font-size: 62.5%; /* nu er 1rem = 10px */
+  --base-color1: #5286A2;
+  --base-color2: #73B5D4; 
+
+}
+
+body{
+  margin:0;
+  font-family: Fuzzy-Bubbles, sans-serif;
+  color:var(--Text_color);
+  background: var(--bg);
+}
+
+nav {
+    padding: 20px;
+}
+
+nav a {
+    font-size: 30px; ;
+    size: 30px;
+    margin-right: 100px;
+    text-decoration: underline;
+    color: var(--Text_color);
+    text-align: left;
+}
+
+main {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+h1 {
+    background-color: var(--Backgrund_titel);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 48px;
+    
+}
+
+
+.Start_button {
+    display: block;
+    margin: 100px auto;
+    padding: 20px 60px;
+    font-size: 24px;
+    background-color: var(--Menu_backgrund_color);
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 48px;
+}
+
+/* Login side */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login_menu {
+  background-color: var(--Menu_backgrund_color);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  /* padding-left: 100px; */
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid black;
+  border-radius: 2px;
+  background-color: var(--Menu_backgrund_color);
+}
+
+/* Center a div */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+The tortoriel told me to use span
+Wtf is span TvT
+*/
+
+.Submit_login {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  align-items: right;
+  padding: right 20px; ;
+}
+
+.Submit_login span {
+  font-size: 24px;
+}
