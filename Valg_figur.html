@@ -25,17 +25,23 @@ Login side
         <h1>Vadehavets dyr</h1>
         
         <div class="center">
-            <form class="Login_menu">
-            <label for="navn">Navn:</label>
-            <input type="text" id="navn" name="navn">
+            
+            <div class="Figure_menu">
+                <h2>Vælg din character</h2>
+                <div class="Box"> 
+                    <button class="Figure_picture" onclick="location.href='Home_menu.html'"> 
+                        <img src="img/Worm.png" alt="Orm"> 
+                    </button>
+                    <button class="Figure_picture"> 
+                        <img src="img/Crab.png" alt="Crabbe"> 
+                    </button>
+                    <button class="Figure_picture"> 
+                        <img src="img/Fish.png" alt="Fisk">
+                    </button>
+                </div>
 
-            <label for="klasse">Klasse:</label>
-            <input type="text" id="klasse" name="klasse">
-                
-            <button type="button" class="Submit_login" onclick="location.href='Valg_figur.html'" >
-                <span  >→</span>
-            </button>
-            </form>
+
+            </div>
         </div>
     </main>
 </body>

@@ -1,0 +1,46 @@
+<!--
+Home_menu
+
+- made by Maria and Islam
+-->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Vadehavet</title>
+    <link rel='stylesheet' href='css\main.css'>
+    <script type="text/javascript" src="js/Script.js"></script>
+</head>
+<body class="Backgrund_kort">
+    
+    <header class="Topbar_home">
+        <div class="Xp_pos">(x) XP</div>
+            <h1 >Vadehavet</h1>
+        <div class="Menu_pos">☰</div>
+    </header>
+    
+    <Button class="Map_button Skarv"> <img src="img/Skarv.png" alt="Skarv"></Button>
+    <Button class="Map_button Gravand" onclick="openPopup()"> <img src="img/Gravand.png" alt="Gravand"></Button>
+    <Button class="Map_button Preastekrave"> <img src="img/Preastekrave.png" alt="Preastekrave"></Button>
+    <Button class="Map_button Sand_krabbe"> <img src="img/Sand_krabbe.png" alt="Sand krabbe"></Button>
+    <Button class="Map_button Storspove"> <img src="img/Storspove.png" alt="Storspove"></Button>
+    <Button class="Map_button Hjertemusling"> <img src="img/Hjertemusling.png" alt="Hjertemusling"></Button>
+    <Button class="Map_button Sild"> <img src="img/Sild.png" alt="Sild"></Button>
+    <Button class="Map_button Sand_orm"> <img src="img/Sand_orm.png" alt="Sand orm"></Button>
+    <Button class="Map_button Strandskade"> <img src="img/Stranskade.png" alt="Strandskade"></Button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">×</span>
+            <h2>Gravand</h2>
+            <p>Gravanden er en stor and med en rød knop på næbbet</p>
+        </div>
+    </div>
+
+    <button class="Back_button" onclick="location.href='Home_menu.html'"> <img src="img/Back_button.png" alt="Back"> </button>
+
+
+</body>
+</html>
