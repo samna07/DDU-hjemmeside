@@ -25,7 +25,7 @@ body{
   margin:0;
   font-family: Fuzzy-Bubbles, sans-serif;
   color:var(--Text_color);
-  background: var(--bg);
+  background: linear-gradient(180deg, #CDC2A9 68.75%, #676155 100%);
 }
 
 .Backgrund_start{
@@ -208,7 +208,7 @@ Wtf is span TvT
 
 .Menu_pos {
   position: absolute;
-  right: 20px;
+  right: 30px;
   text-align: center;
   font-size: 52px;
   color: #C5E9FF;
@@ -284,7 +284,7 @@ Wtf is span TvT
 .Home_button{
  border-radius: 50px;
  border: 1px solid #000;
-
+ padding: 10px;
  background: #FFF;
 
  font-size: 62px;
@@ -466,4 +466,79 @@ Wtf is span TvT
   float: right;
   cursor: pointer;
   font-size: 24px;
+}
+
+/* Spil */
+
+.Spil_menu{
+  display: grid;
+  align-items: center;
+}
+
+.Spil_menu_box{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  height: 60vh;
+}
+
+.Spil_button{
+  font-family:"Fuzzy Bubbles";
+  padding: 40px;
+  background:linear-gradient(180deg, #D9D9D9 72.78%, #737373 140.88%);
+  font-size: 62px;
+}
+/* Vendespil */
+.Vendespil_menu{
+  display: grid;
+  align-items: center;
+}
+
+.Vendespil_menu_box{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  height: 60vh;
+}
+
+.Vendespil_button{
+  font-family:"Fuzzy Bubbles";
+  padding: 60px;
+  background:linear-gradient(180deg, #D9D9D9 72.78%, #737373 140.88%);
+  font-size: 42px;
+  border: solid black 1px;
+}
+
+.Green{
+  background: #55F828;
+}
+
+.Orange{
+  background: #FFC06D;
+}
+
+.Red{
+  background: #FF3636;
+}
+
+/* Quiz */
+
+.Backgrund_quiz{
+  
+  background-image:url('../img/Quiz_.backgrund.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  background-position: center;
+  margin: 0 auto;
+  background-color: #FAEDCD;
+}
+
+.Small{
+  font-size: 32px;
+  border: solid black 2px;
 }
