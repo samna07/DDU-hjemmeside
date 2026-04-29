@@ -1,0 +1,59 @@
+<!--
+Home_menu
+
+- made by Maria and Islam
+-->
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Vadehavet</title>
+    <link rel='stylesheet' href='css\main.css'>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body class="Backgrund_home">
+    <header class="Topbar_home">
+            <div class="Xp_pos">0 XP</div>
+            <div class="Progress_bar_container">
+                <div class="Progress_bar_fill" id="Progress_fill"></div>
+            </div>
+            <img class="Menu_pos Exit_question" onclick="Exit_popup()" src="img/Exit_questions.png"></img>
+            
+        </header>
+    
+    <!-- Question -->
+    <div class="Questions_box">
+    <h2>Hvilket dyr er særligt kendt i Vadehavet?</h2>
+
+    <div class="Answers">
+        <button class="Answer" data-correct="False">Isbjørn</button>
+        <button class="Answer" data-correct="True">Sæl</button>
+        <button class="Answer" data-correct="False">Kænguru</button>
+        <button class="Answer" data-correct="False">Panda</button>
+    </div>
+
+    <div id="Feedback"> </div>
+
+    <button id="NextBtn" class="Hidden Corner" onclick=Next_question()>➜</button>
+
+    <div id="Exit_popup" class="Exit_popup">
+        <div class="Exit_content">
+            <div>Er du sikker? Der er ikke meget tilbage.</div>
+            <img src="img/Sad_worm.png" alt="Trist">
+            <div class="Center">
+                <button class="Red_backgrund" onclick="location.href='Quiz.html'">Gider ikke mere</button>
+                <button class="Green_backgrund" onclick="Close_exit_popup()">Okay jeg fortsætter</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<script type="text/javascript" src="js/Script.js"></script> <!-- Needs to load last idk javascript is dumb-->
+
+</body>
+</html>
