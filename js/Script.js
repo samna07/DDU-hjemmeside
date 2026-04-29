@@ -1,3 +1,27 @@
+// Login
+
+function Login() {
+  const navn = document.getElementById("navn").value;
+  const klasse = document.getElementById("klasse").value;
+
+  // Saving
+  localStorage.setItem("navn", navn);
+  localStorage.setItem("klasse", klasse);
+
+  window.location.href = "Valg_figur.html";
+}
+
+function Load_user() {
+  const navn = localStorage.getItem("navn");
+  const klasse = localStorage.getItem("klasse");
+
+  const welcome = document.getElementById("Welcome");
+
+  if (welcome && navn && klasse) {
+    welcome.innerText = `Velkommen ${navn} fra ${klasse}`;
+  }
+}
+
 // Menu
 
 function Toggle_menu() {
@@ -35,13 +59,39 @@ function load_xp() {
 function Update_XP(amount) {
   xp += amount;
   localStorage.setItem("xp", xp);
+  if (xp > 100) {
+    Update_XP(-100)
+    Update_Niveau(1)
+    Render_Niveau()
+  }
   Render_XP()
   }
 
 function Render_XP() {
   const Xp_display = document.querySelector(".Xp_pos");
   if (Xp_display) {
-    Xp_display.innerText = xp + " XP";
+    Xp_display.innerHTML = xp + " XP";
+  }
+}
+
+// Niveau
+
+function load_Niveau() {
+  const Saved_Niveau = localStorage.getItem("Niveau");
+  Niveau = Saved_Niveau ? parseInt(Saved_Niveau) : 0;
+  return Niveau
+}
+
+function Update_Niveau(amount) {
+  Niveau += amount;
+  localStorage.setItem("Niveau", Niveau);
+  Render_Niveau()
+  }
+
+function Render_Niveau() {
+  const Xp_display = document.querySelector(".Niveau");
+  if (Xp_display) {
+    Xp_display.innerHTML = `<div class="Number"> ${Niveau} </div> <span>Niveau (${Niveau})</span>`;
   }
 }
 
@@ -49,7 +99,14 @@ function Render_XP() {
 // Updates the xp
 document.addEventListener("DOMContentLoaded", () => {
   xp = load_xp();
+  Update_XP(0)
   Render_XP()
+
+  Niveau = load_Niveau();
+  Update_Niveau(0)
+  Render_Niveau()
+
+  Load_user()
 });
 
 // First qeustion framework
