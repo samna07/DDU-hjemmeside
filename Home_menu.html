@@ -21,8 +21,18 @@ Home_menu
     <header class="Topbar_home">
     <div class="Xp_pos">0 XP</div>
     <h1>Velkommen "Navn" fra "Klasse"</h1>
-    <div class="Menu_pos">☰</div>
+    <div class="Menu_pos" onclick="Toggle_menu()">☰</div>
     </header>
+    
+    <div id="Overlay" class="Overlay" onclick="Close_menu()"></div>
+    <div id="Side_menu" class="Side_menu">
+        <a href="Home_menu.html">Hjem</a>
+        <a href="Lear.html">Lær</a>
+        <a href="Quiz.html">Quiz</a>
+        <a href="Kort.html">Kort</a>
+        <a href="Spil.html">Spil</a>
+    </div>
+    
     <div class="Main_menu">
     <div class="Main_menu_box">
         <button class="Home_button" onclick="location.href='Lear.html'"> LÆR  </button>

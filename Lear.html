@@ -21,10 +21,17 @@ Lær
     <header class="Topbar_home">
     <div class="Xp_pos">0 XP</div>
     <h1 class="Hidden"> "Hidden"</h1> <!-- Text hidden for the user, Makes the posetion of xp and menu consistent -->
-    <div class="Menu_pos">☰</div>
+    <div class="Menu_pos" onclick="Toggle_menu()">☰</div>
     </header>
-
-
+    
+    <div id="Overlay" class="Overlay" onclick="Close_menu()"></div>
+    <div id="Side_menu" class="Side_menu">
+        <a href="Home_menu.html">Hjem</a>
+        <a href="Lear.html">Lær</a>
+        <a href="Quiz.html">Quiz</a>
+        <a href="Kort.html">Kort</a>
+        <a href="Spil.html">Spil</a>
+    </div>
     <div class="Laer_box">
         <div class="Video_box">
             <video controls poster="Tegneserie_thumbnail.jpg">

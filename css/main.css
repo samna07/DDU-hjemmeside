@@ -212,6 +212,8 @@ Wtf is span TvT
   text-align: center;
   font-size: 52px;
   color: #C5E9FF;
+
+  cursor: pointer;
 }
 
 /* 4 main buttons */
@@ -426,7 +428,7 @@ Wtf is span TvT
   left: 890px;
 }
 
-.popup {
+.Popup {
   position: fixed;
   top: 0;
   left: 0;
@@ -443,30 +445,35 @@ Wtf is span TvT
   transition: opacity 0.3s ease;
 }
 
-.popup.active {
+.Popup.active {
   opacity: 1;
   visibility: visible;
 }
 
-.popup-content {
+.Popup_content h2 {
+  text-align: center;
+  font-size: 48px;
+}
+
+.Popup_content {
   background: #b9b8b8;
   padding: 20px;
   border-radius: 20px;
   width: 60%;
   
-  transform: scale(0.7);
-  transition: transform 0.3s ease;
+  transform: scale(0.2);
+  transition: transform 0.5s ease;
   font-size: 24px;
 }
 
-.popup.active .popup-content {
-  transform: scale(1);
+.Popup.active .Popup_content {
+  transform: scale(0.7);
 }
 
-.close {
+.Close {
   float: right;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 48px;
 }
 
 /* Spil */
@@ -732,4 +739,55 @@ Wtf is span TvT
   background: linear-gradient(90deg, #27cd3b, #00FF1E);
   border-radius: 10px;
   transition: width 0.3s ease;
+}
+
+/* Menu */
+
+.Side_menu {
+  position: fixed;
+  top: 0;
+   right: -250px; /* Hidden */
+  width: 250px;
+  height: 100%;
+  background: var(--Menu_backgrund_color);
+  padding-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  transition: right 0.5s ease;
+  z-index: 1000;
+}
+
+.Side_menu a {
+  font-size: 28px;
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+}
+
+.Side_menu.active {
+  right: 0;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s;
+  z-index: 900;
+}
+
+.Overlay.active {
+  opacity: 1;
+  visibility: visible;
 }

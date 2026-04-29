@@ -1,11 +1,23 @@
-// Dyr code
+// Menu
 
-function openPopup() {
-  document.getElementById("popup").classList.add("active");
+function Toggle_menu() {
+  document.getElementById("Side_menu").classList.toggle("active");
+  document.getElementById("Overlay").classList.toggle("active");
 }
 
-function closePopup() {
-  document.getElementById("popup").classList.remove("active");
+function Close_menu() {
+  document.getElementById("Side_menu").classList.remove("active");
+  document.getElementById("Overlay").classList.remove("active");
+}
+
+// Dyr code
+
+function Open_popup(Id) {
+  document.getElementById(Id).classList.add("active");
+}
+
+function Close_popup(Id) {
+  document.getElementById(Id).classList.remove("active");
 }
 
 //Quiz code
@@ -39,9 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
   xp = load_xp();
   Render_XP()
 });
-
-
-
 
 // First qeustion framework
 // const Answers = document.querySelectorAll(".Answer");
@@ -81,8 +90,12 @@ function Close_exit_popup() {
 // Qestions data
 let Current_question_index = 0
 let Score = 0
+let Questions_level_1;
 
-const Questions_level_1 = [
+var lastPart = window.location.pathname.split("/").pop();
+
+if (lastPart == "Level1.html"){
+    Questions_level_1 = [
   {
     Question: "Hvilket dyr er særligt kendt i Vadehavet?",
     Answers: [
@@ -138,6 +151,121 @@ const Questions_level_1 = [
     ]
   }
 ];
+} else if (lastPart == "Level2.html"){
+    Questions_level_1 = [
+  {
+    Question: "Hvad kan man finde i sandet?",
+    Answers: [
+      { Text: "Træer", Correct: false },
+      { Text: "Skattekiste", Correct: false},
+      { Text: "Bøger", Correct: false },
+      { Text: "Sandorme", Correct: true }
+    ]
+  },
+  {
+    Question: "Hvad er et UNESCO Verdensarv?",
+    Answers: [
+      { Text: "Et mærkeligt sted", Correct: false },
+      { Text: "Et pænt sted", Correct: false},
+      { Text: "Et sted med vigtig natur", Correct: true },
+      { Text: "Et sted med mange floder", Correct: false }
+    ]
+  },
+  {
+    Question: "Hvad er en sandbakke?",
+    Answers: [
+      { Text: "En bunke sand", Correct: true},
+      { Text: "Der hvor muldvarpe bor", Correct: false },
+      { Text: "En slags fisk", Correct: false },
+      { Text: "Et bjerg med sand på toppen", Correct: false }
+    ]
+  },
+  {
+    Question: 'Hvor mange gange i døgnet er der typisk højvande?',
+    Answers: [
+      { Text: "4", Correct: false },
+      { Text: "8", Correct: false },
+      { Text: "2", Correct: true },
+      { Text: "1", Correct: false}
+    ]
+  },
+  {
+    Question: 'Hvorfor er mudder vigtigt i vadehavet?"',
+    Answers: [
+      { Text: "Det indeholder mad til dyrene", Correct: true},
+      { Text: "Det holder varmen", Correct: false },
+      { Text: "Man kan lege med det", Correct: false },
+      { Text: "Dyrene går bedre i det", Correct: false }
+    ]
+  },
+  {
+    Question: 'Hvad er en tidevandszone?',
+    Answers: [
+      { Text: "Et område med meget vand", Correct: false},
+      { Text: "Et område der skifter mellem vand og tørt", Correct: true },
+      { Text: "Et område der er meget tørt", Correct: false },
+      { Text: "Et område uden dyr ", Correct: false }
+    ]
+  }
+];
+} else if (lastPart == "Level3.html"){
+    Questions_level_1 = [
+  {
+    Question: "Hvad kaldes de dyr, der lever nedgravet i sand og mudder?",
+    Answers: [
+      { Text: "Rovdyr", Correct: false },
+      { Text: "Flyvedyr", Correct: false },
+      { Text: "Bunddyr", Correct: true },
+      { Text: "Pattedyr", Correct: false }
+    ]
+  },
+  { 
+    Question: "Hvad er en fødekæde?",
+    Answers: [
+      { Text: "Hvem spiser hvem i naturen", Correct: true },
+      { Text: "En kæde af sten", Correct: false },
+      { Text: "En type fisk", Correct: false },
+      { Text: "En slags bølge", Correct: false }
+    ]
+  },
+  {
+    Question: "Hvad er en vigtig regel, når man går tur i Vadehavet?",
+    Answers: [
+      { Text: "Gå så langt ud som muligt alene", Correct: false },
+      { Text: "Undgå at kigge på naturen", Correct: false },
+      { Text: "Løb hele tiden", Correct: false },
+      { Text: "Hold øje med tidevandet", Correct: true }
+    ]
+  },
+  {
+    Question: "Hvad sker der med sand og mudder i Vadehavet på grund af tidevandet?",
+    Answers: [
+      { Text: "Det forsvinder helt", Correct: false },
+      { Text: "Det flyttes rundt og danner nye landskaber", Correct: true },
+      { Text: "Det bliver til sten", Correct: false },
+      { Text: "Det bliver til is", Correct: false }
+    ]
+  },
+  {
+    Question: "Hvad betyder det, at Vadehavet er et økosystem?",
+    Answers: [
+      { Text: "Det er kun vand", Correct: false },
+      { Text: "Der bor kun fisk", Correct: false },
+      { Text: "Dyr og planter lever sammen og påvirker hinanden", Correct: true },
+      { Text: "Det er et sted uden liv", Correct: false }
+    ]
+  },
+  {
+    Question: "Hvad er hovedårsagen til tidevand?",
+    Answers: [
+      { Text: "Vind", Correct: false },
+      { Text: "Månens tiltrækningskraft", Correct: true },
+      { Text: "Regn", Correct: false },
+      { Text: "Temperatur", Correct: false }
+    ]
+  }
+];
+}
 
 //Functions
 
