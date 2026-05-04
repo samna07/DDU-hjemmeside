@@ -532,6 +532,47 @@ Wtf is span TvT
   height: 60vh;
 }
 
+.Vendespil_menu_box_game{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 60vh;
+}
+
+.Vendespil_8{
+  grid-template-columns: repeat(4, auto);
+}
+
+.Vendespil_16{
+  grid-template-columns: repeat(8, auto);
+}
+
+.Vendespil_16 button img{
+  height: 125px;
+  width: 125px;
+}
+
+.Vendespil_16 button {
+  height: 125px;
+  width: 125px;
+}
+
+.Vendespil_24{
+  grid-template-columns: repeat(8, auto);
+}
+
+.Vendespil_24 button img{
+  height: 100px;
+  width: 100px;
+}
+
+.Vendespil_24 button {
+  height: 100px;
+  width: 100px;
+}
+
 .Vendespil_button{
   font-family:"Fuzzy Bubbles";
   padding: 60px;
@@ -540,6 +581,24 @@ Wtf is span TvT
   border: solid black 1px;
 
   cursor: pointer;
+}
+
+.Vendespil_card{
+  height: 200px;
+  width: 200px;
+  object-fit: fill;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Vendespil_card img{
+  height: 200px;
+  width: 200px;
+  border: solid 1px;
+  object-fit: fill;
+  overflow: hidden;
+
 }
 
 .Green{

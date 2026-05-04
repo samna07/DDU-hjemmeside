@@ -97,16 +97,32 @@ function Render_Niveau() {
 
 // DOMContentLoaded Makes the function run after everthing is loaded.
 // Updates the xp
+
+let cards = null;
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
 document.addEventListener("DOMContentLoaded", () => {
   xp = load_xp();
-  Update_XP(0)
-  Render_XP()
+  Update_XP(0);
+  Render_XP();
 
   Niveau = load_Niveau();
-  Update_Niveau(0)
-  Render_Niveau()
+  Update_Niveau(0);
+  Render_Niveau();
 
-  Load_user()
+  Load_user();
+
+  const cards = document.querySelectorAll(".Vendespil_card");
+
+  let firstCard = null;
+  let secondCard = null;
+  let lockBoard = false;
+
+  cards.forEach(card => {
+  card.addEventListener("click", flipCard);
+});
 });
 
 // First qeustion framework
@@ -406,3 +422,48 @@ function Update_progress_bar() {
   const Percentage = ((Current_question_index) / Total_questions) * 100;
   Progress_fill.style.width = Percentage + "%";
 } 
+
+//Vendespil
+
+
+
+function flipCard() {
+  if (lockBoard) return;
+  if (this == firstCard) return;
+
+  const img = this.querySelector("img");
+
+  // Vis billedet
+  img.src = this.dataset.image;
+
+  if (!firstCard) {
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+  lockBoard = true;
+
+  checkMatch();
+}
+
+function checkMatch() {
+  const isMatch =
+    firstCard.dataset.image === secondCard.dataset.image;
+
+  if (isMatch) {
+    resetBoard();
+  } else {
+    setTimeout(() => {
+      firstCard.querySelector("img").src = "img/Vendespi_kort.png";
+      secondCard.querySelector("img").src = "img/Vendespi_kort.png";
+      resetBoard();
+    }, 1000);
+  }
+}
+
+function resetBoard() {
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+}
