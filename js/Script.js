@@ -125,6 +125,35 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 });
 
+// Lear code
+let Video_number = 1
+function Next_video() {
+  Video_number = Video_number + 1
+  if (Video_number > 3) {
+    Video_number = 1
+  }
+
+  Update_video(Video_number)
+}
+
+function Update_video(Id) {
+  if (Id == 1){
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Tidevand.mp4";
+  }
+  if (Id == 2){
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Vadehav.mp4";
+  }
+  if (Id == 3) {
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Plastik.mp4";
+  }
+
+}
+
+
+
 // First qeustion framework
 // const Answers = document.querySelectorAll(".Answer");
 // const Feedback = document.getElementById("Feedback");
