@@ -37,11 +37,12 @@ body{
 }
 
 .Backgrund_home {
- background-image:url('../img/Home-menu-true-backround.jpg');
+  background-image:url('../img/Home-menu-true-backround.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto;
   font-family: "Fuzzy Bubbles";
+  background-size: cover;
+  min-height: 100vh;
 }
 
 nav {
@@ -318,7 +319,7 @@ Wtf is span TvT
   justify-content: center;
   align-items: center;
   padding: 20px;
-  gap: 100px;
+  gap: 20px;
 }
 
 .Video_box {
@@ -343,6 +344,39 @@ Wtf is span TvT
 .Laer_character img {
   width:  400px;
   height: 400px;
+}
+
+.Next_video{
+  width: 70px;
+  height: 70px;
+
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  position: relative;
+  top: 30px;
+}
+
+.Next_video img{
+  width: 70px;
+  height: 70px;
+
+  cursor: pointer;
+  
+}
+
+.Speech_bubble{
+  position: relative;
+  background: #d9ecf7;
+  bottom: 550px;
+  right: 400px;
+
+  padding: 15px;
+  border-radius: 15px;
+  max-width: 400px;
+  font-family: "Fuzzy Bubbles";
+  font-size: 32px;
 }
 
 .Speech_bubble{
@@ -515,7 +549,7 @@ Wtf is span TvT
   grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-content: center;
-  gap: 200px;
+  /* gap: 200px; */
   height: 60vh;
 }
 
@@ -542,6 +576,47 @@ Wtf is span TvT
   height: 60vh;
 }
 
+.Vendespil_menu_box_game{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  height: 60vh;
+}
+
+.Vendespil_8{
+  grid-template-columns: repeat(4, auto);
+}
+
+.Vendespil_16{
+  grid-template-columns: repeat(8, auto);
+}
+
+.Vendespil_16 button img{
+  height: 125px;
+  width: 125px;
+}
+
+.Vendespil_16 button {
+  height: 125px;
+  width: 125px;
+}
+
+.Vendespil_24{
+  grid-template-columns: repeat(8, auto);
+}
+
+.Vendespil_24 button img{
+  height: 100px;
+  width: 100px;
+}
+
+.Vendespil_24 button {
+  height: 100px;
+  width: 100px;
+}
+
 .Vendespil_button{
   font-family:"Fuzzy Bubbles";
   padding: 60px;
@@ -550,6 +625,24 @@ Wtf is span TvT
   border: solid black 1px;
 
   cursor: pointer;
+}
+
+.Vendespil_card{
+  height: 200px;
+  width: 200px;
+  object-fit: fill;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Vendespil_card img{
+  height: 200px;
+  width: 200px;
+  border: solid 1px;
+  object-fit: fill;
+  overflow: hidden;
+
 }
 
 .Green{

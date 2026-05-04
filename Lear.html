@@ -11,6 +11,10 @@ Lær
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Vadehavet</title>
     <link rel='stylesheet' href='css\main.css'>
+    <link rel="icon" type="image/x-icon" href="img/Worm-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body class="Backgrund_home">
     
@@ -24,22 +28,24 @@ Lær
     <div class="Laer_box">
         <div class="Video_box">
     
-    <video controls>
-        <source src="youtube/Tidevand.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+            <video controls id="Video_div">
+                <source  src="youtube/Tidevand.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-    <video controls>
-        <source src="youtube/mit vadehav.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+            <!-- <video controls class="Hidden">
+                <source src="youtube/Vadehav.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-    <video controls>
-        <source src="youtube/plastik.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+            <video controls class="Hidden">
+                <source src="youtube/Plastik.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
 
-</div>
+        </div>
+        <button class="Next_video" onclick="Next_video()"> <img src="img/Forward_button.png" alt="Næste video"></button>
+
         <div class="Laer_character">
         <img src="img/Worm.png" alt="Orm">
     
@@ -53,6 +59,6 @@ Lær
    
     <button class="Back_button" onclick="location.href='Home_menu.html'"> <img src="img/Back_button.png" alt="Back"> </button>
     
-    
+    <script type="text/javascript" src="js/Script.js"></script>
 </body>
 </html>
