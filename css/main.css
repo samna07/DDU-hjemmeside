@@ -37,12 +37,11 @@ body{
 }
 
 .Backgrund_home {
-  background-image:url('../img/Home-menu-true-backround.jpg');
+ background-image:url('../img/Home-menu-true-backround.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: auto;
   font-family: "Fuzzy Bubbles";
-  background-size: cover;
-  min-height: 100vh;
 }
 
 nav {
@@ -322,11 +321,18 @@ Wtf is span TvT
   gap: 100px;
 }
 
-.Video_box Video {
-  width:  600px;
-  height: 400px;
-  border-radius: 10px;
-  border: 4px solid #000;
+.Video_box {
+    height: 400px;        /* same as video height */
+    overflow-y: auto;     
+    display: flex;
+    flex-direction: column;
+}
+
+.Video_box video {
+    width: 100%;
+    height: 250px;        /* fixed height */
+    object-fit: cover;
+    flex-shrink: 0;       /* prevents shrinking */
 }
 
 .Laer_character {
@@ -509,7 +515,7 @@ Wtf is span TvT
   grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-content: center;
-  /* gap: 200px; */
+  gap: 200px;
   height: 60vh;
 }
 
@@ -536,47 +542,6 @@ Wtf is span TvT
   height: 60vh;
 }
 
-.Vendespil_menu_box_game{
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  align-items: center;
-  justify-content: center;
-  gap: 50px;
-  height: 60vh;
-}
-
-.Vendespil_8{
-  grid-template-columns: repeat(4, auto);
-}
-
-.Vendespil_16{
-  grid-template-columns: repeat(8, auto);
-}
-
-.Vendespil_16 button img{
-  height: 125px;
-  width: 125px;
-}
-
-.Vendespil_16 button {
-  height: 125px;
-  width: 125px;
-}
-
-.Vendespil_24{
-  grid-template-columns: repeat(8, auto);
-}
-
-.Vendespil_24 button img{
-  height: 100px;
-  width: 100px;
-}
-
-.Vendespil_24 button {
-  height: 100px;
-  width: 100px;
-}
-
 .Vendespil_button{
   font-family:"Fuzzy Bubbles";
   padding: 60px;
@@ -585,24 +550,6 @@ Wtf is span TvT
   border: solid black 1px;
 
   cursor: pointer;
-}
-
-.Vendespil_card{
-  height: 200px;
-  width: 200px;
-  object-fit: fill;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.Vendespil_card img{
-  height: 200px;
-  width: 200px;
-  border: solid 1px;
-  object-fit: fill;
-  overflow: hidden;
-
 }
 
 .Green{
