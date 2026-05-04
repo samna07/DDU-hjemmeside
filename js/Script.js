@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach(card => {
   card.addEventListener("click", flipCard);
+
 });
 });
 
@@ -152,7 +153,7 @@ function Update_video(Id) {
 
 }
 
-
+Update_video(Video_number)
 
 // First qeustion framework
 // const Answers = document.querySelectorAll(".Answer");
