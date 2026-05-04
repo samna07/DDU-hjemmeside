@@ -36,8 +36,12 @@ body{
   font-family: "Fuzzy Bubbles";
 }
 
-.Backgrund_home{
-  background: linear-gradient(180deg, #CDC2A9 68.75%, #676155 100%);
+.Backgrund_home {
+  background-image:url('../img/Home-menu-true-backround.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Fuzzy Bubbles";
+  background-size: cover;
   min-height: 100vh;
 }
 
@@ -505,7 +509,7 @@ Wtf is span TvT
   grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-content: center;
-  gap: 200px;
+  /* gap: 200px; */
   height: 60vh;
 }
 
