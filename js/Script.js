@@ -1,199 +1,9 @@
-// Login
-
-function Login() {
-  const navn = document.getElementById("navn").value;
-  const klasse = document.getElementById("klasse").value;
-
-  // Saving
-  localStorage.setItem("navn", navn);
-  localStorage.setItem("klasse", klasse);
-
-  window.location.href = "Valg_figur.html";
-}
-
-function Load_user() {
-  const navn = localStorage.getItem("navn");
-  const klasse = localStorage.getItem("klasse");
-
-  const welcome = document.getElementById("Welcome");
-
-  if (welcome && navn && klasse) {
-    welcome.innerText = `Velkommen ${navn} fra ${klasse}`;
-  }
-}
-
-// Menu
-
-function Toggle_menu() {
-  document.getElementById("Side_menu").classList.toggle("active");
-  document.getElementById("Overlay").classList.toggle("active");
-}
-
-function Close_menu() {
-  document.getElementById("Side_menu").classList.remove("active");
-  document.getElementById("Overlay").classList.remove("active");
-}
-
-// Dyr code
-
-function Open_popup(Id) {
-  document.getElementById(Id).classList.add("active");
-}
-
-function Close_popup(Id) {
-  document.getElementById(Id).classList.remove("active");
-}
-
-//Quiz code
-
-// Btn is button, tortoriel used abriviation
-
-// let xp = 0;
-
-function load_xp() {
-  const Saved_XP = localStorage.getItem("xp");
-  xp = Saved_XP ? parseInt(Saved_XP) : 0;
-  return xp
-}
-
-function Update_XP(amount) {
-  xp += amount;
-  localStorage.setItem("xp", xp);
-  if (xp > 100) {
-    Update_XP(-100)
-    Update_Niveau(1)
-    Render_Niveau()
-  }
-  Render_XP()
-  }
-
-function Render_XP() {
-  const Xp_display = document.querySelector(".Xp_pos");
-  if (Xp_display) {
-    Xp_display.innerHTML = xp + " XP";
-  }
-}
-
-// Niveau
-
-function load_Niveau() {
-  const Saved_Niveau = localStorage.getItem("Niveau");
-  Niveau = Saved_Niveau ? parseInt(Saved_Niveau) : 0;
-  return Niveau
-}
-
-function Update_Niveau(amount) {
-  Niveau += amount;
-  localStorage.setItem("Niveau", Niveau);
-  Render_Niveau()
-  }
-
-function Render_Niveau() {
-  const Xp_display = document.querySelector(".Niveau");
-  if (Xp_display) {
-    Xp_display.innerHTML = `<div class="Number"> ${Niveau} </div> <span>Niveau (${Niveau})</span>`;
-  }
-}
-
-// DOMContentLoaded Makes the function run after everthing is loaded.
-// Updates the xp
-
-let cards = null;
-
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-document.addEventListener("DOMContentLoaded", () => {
-  xp = load_xp();
-  Update_XP(0);
-  Render_XP();
-
-  Niveau = load_Niveau();
-  Update_Niveau(0);
-  Render_Niveau();
-
-  Load_user();
-
-  const cards = document.querySelectorAll(".Vendespil_card");
-
-  let firstCard = null;
-  let secondCard = null;
-  let lockBoard = false;
-
-  cards.forEach(card => {
-  card.addEventListener("click", flipCard);
-
-});
-});
-
-// Lear code
-let Video_number = 1
-function Next_video() {
-  Video_number = Video_number + 1
-  if (Video_number > 3) {
-    Video_number = 1
-  }
-
-  Update_video(Video_number)
-}
-
-function Update_video(Id) {
-  if (Id == 1){
-    var vid = document.getElementById("Video_div");
-    vid.src = "../youtube/Tidevand.mp4";
-  }
-  if (Id == 2){
-    var vid = document.getElementById("Video_div");
-    vid.src = "../youtube/Vadehav.mp4";
-  }
-  if (Id == 3) {
-    var vid = document.getElementById("Video_div");
-    vid.src = "../youtube/Plastik.mp4";
-  }
-
-}
-
-Update_video(Video_number)
-
-// First qeustion framework
-// const Answers = document.querySelectorAll(".Answer");
-// const Feedback = document.getElementById("Feedback");
-// const NextBtn = document.getElementById("NextBtn");
-
-// Answers.forEach(Btn => {
-//   Btn.addEventListener("click", () => {
-
-//     if (Btn.dataset.correct == "true) {
-//         Btn.classList.add("Correct");
-//         Feedback.innerText = "Korrekt!";
-//         Answers.forEach(x => x.disabled = true;
-//         Update_XP(10);
-//         NextBtn.classList.remove("Hidden");
-//     } else {
-//         Btn.classList.add("Wrong");
-//         Feedback.innerText = "Prøv igen";
-//     }
-//   });
-// });
-
-// NextBtn.addEventListener("click", () => {
-//     alert("Næste spørgsmål!");
-// });
-
-//Exit pop up
-
-function Exit_popup() {
-  document.getElementById("Exit_popup").classList.add("Active");
-}
-
-function Close_exit_popup() {
-  document.getElementById("Exit_popup").classList.remove("Active");
-}
+// Question data
 
 // Qestions data
 let Current_question_index = 0
 let Score = 0
-let Questions_level_1;
+let Questions_level_1 = "";
 
 var lastPart = window.location.pathname.split("/").pop();
 
@@ -370,6 +180,282 @@ if (lastPart == "Level1.html"){
 ];
 }
 
+
+
+
+
+
+// Login
+
+function Login() {
+  const navn = document.getElementById("navn").value;
+  const klasse = document.getElementById("klasse").value;
+
+  // Saving
+  localStorage.setItem("navn", navn);
+  localStorage.setItem("klasse", klasse);
+
+  window.location.href = "Valg_figur.html";
+}
+
+function Load_user() {
+  const navn = localStorage.getItem("navn");
+  const klasse = localStorage.getItem("klasse");
+
+  const welcome = document.getElementById("Welcome");
+
+  if (welcome && navn && klasse) {
+    welcome.innerText = `Velkommen ${navn} fra ${klasse}`;
+  }
+}
+
+// Choose figur
+
+function Save_figur(Figure_id) {
+  localStorage.setItem("Figure", Figure_id);
+}
+
+// Pictures
+
+function Lear_img() {
+  const Figure_id = localStorage.getItem("Figure");
+
+  if (Figure_id == "Worm"){
+    return "img/worm.png"
+  }
+
+  if (Figure_id == "Crab"){
+    return "img/Lear-crab.png"
+  }
+
+  if (Figure_id == "Fish"){
+    return "img/Lear-fish.png"
+  }
+
+}
+
+function Sad_img() {
+  const Figure_id = localStorage.getItem("Figure");
+
+  if (Figure_id == "Worm"){
+    return "img/Sad_worm.png"
+  }
+
+  if (Figure_id == "Crab"){
+    return "img/sad-crab.png"
+  }
+
+  if (Figure_id == "Fish"){
+    return "img/sad-fish.png"
+  }
+
+}
+
+// Menu
+
+function Toggle_menu() {
+  document.getElementById("Side_menu").classList.toggle("active");
+  document.getElementById("Overlay").classList.toggle("active");
+}
+
+function Close_menu() {
+  document.getElementById("Side_menu").classList.remove("active");
+  document.getElementById("Overlay").classList.remove("active");
+}
+
+// Dyr code
+
+function Open_popup(Id) {
+  document.getElementById(Id).classList.add("active");
+}
+
+function Close_popup(Id) {
+  document.getElementById(Id).classList.remove("active");
+}
+
+//Quiz code
+
+// Btn is button, tortoriel used abriviation
+
+// let xp = 0;
+
+function load_xp() {
+  const Saved_XP = localStorage.getItem("xp");
+  xp = Saved_XP ? parseInt(Saved_XP) : 0;
+  return xp
+}
+
+function Update_XP(amount) {
+  xp += amount;
+  localStorage.setItem("xp", xp);
+  if (xp > 100) {
+    Update_XP(-100)
+    Update_Niveau(1)
+    Render_Niveau()
+  }
+  Render_XP()
+  }
+
+function Render_XP() {
+  const Xp_display = document.querySelector(".Xp_pos");
+  if (Xp_display) {
+    Xp_display.innerHTML = xp + " XP";
+  }
+}
+
+// Niveau
+
+function load_Niveau() {
+  const Saved_Niveau = localStorage.getItem("Niveau");
+  Niveau = Saved_Niveau ? parseInt(Saved_Niveau) : 0;
+  return Niveau
+}
+
+function Update_Niveau(amount) {
+  Niveau += amount;
+  localStorage.setItem("Niveau", Niveau);
+  Render_Niveau()
+  }
+
+function Render_Niveau() {
+  const Xp_display = document.querySelector(".Niveau");
+  if (Xp_display) {
+    Xp_display.innerHTML = `<div class="Number"> ${Niveau} </div> <span>Niveau (${Niveau})</span>`;
+  }
+}
+
+// DOMContentLoaded Makes the function run after everthing is loaded.
+// Updates the xp
+
+let cards = null;
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+document.addEventListener("DOMContentLoaded", () => {
+
+document.querySelectorAll(".Answer").forEach(Button => {
+  Button.addEventListener("click", () => {
+    const Is_correct = Button.dataset.Correct == "true";
+
+    if (Is_correct) {
+      Button.classList.add("Correct");
+      document.getElementById("Feedback").innerText = "Rigtigt!";
+      Score++;
+      document.getElementById("NextBtn").classList.remove("Hidden");
+      document.querySelectorAll(".Answer").forEach(x => x.disabled = true);
+    } else {
+      Button.classList.add("Wrong");
+      document.getElementById("Feedback").innerText = "Forkert!";
+    }
+
+  });
+});
+
+
+  xp = load_xp();
+  Update_XP(0);
+  Render_XP();
+
+  Niveau = load_Niveau();
+  Update_Niveau(0);
+  Render_Niveau();
+
+  Load_user();
+
+  
+  const cards = document.querySelectorAll(".Vendespil_card");
+
+  firstCard = null;
+  secondCard = null;
+  lockBoard = false;
+
+  cards.forEach(card => {
+  card.addEventListener("click", flipCard);
+});
+  // const figure = localStorage.getItem("Figure");
+  
+    const Lear_imgage = document.getElementById("Laer_picture");
+  if (Lear_imgage) {
+    Lear_imgage.src = Lear_img();
+  }
+
+  const Sad_imgage = document.getElementById("Sad_picture");
+  if (Sad_imgage) {
+    Sad_imgage.src = Sad_img();
+  }
+
+  Show_question()
+
+});
+
+
+
+// Lear code
+let Video_number = 1
+function Next_video() {
+  Video_number = Video_number + 1
+  if (Video_number > 3) {
+    Video_number = 1
+  }
+
+  Update_video(Video_number)
+}
+
+function Update_video(Id) {
+  if (Id == 1){
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Tidevand.mp4";
+  }
+  if (Id == 2){
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Vadehav.mp4";
+  }
+  if (Id == 3) {
+    var vid = document.getElementById("Video_div");
+    vid.src = "../youtube/Plastik.mp4";
+  }
+
+}
+
+Update_video(Video_number)
+
+// First qeustion framework
+// const Answers = document.querySelectorAll(".Answer");
+// const Feedback = document.getElementById("Feedback");
+// const NextBtn = document.getElementById("NextBtn");
+
+// Answers.forEach(Btn => {
+//   Btn.addEventListener("click", () => {
+
+//     if (Btn.dataset.correct == "true) {
+//         Btn.classList.add("Correct");
+//         Feedback.innerText = "Korrekt!";
+//         Answers.forEach(x => x.disabled = true;
+//         Update_XP(10);
+//         NextBtn.classList.remove("Hidden");
+//     } else {
+//         Btn.classList.add("Wrong");
+//         Feedback.innerText = "Prøv igen";
+//     }
+//   });
+// });
+
+// NextBtn.addEventListener("click", () => {
+//     alert("Næste spørgsmål!");
+// });
+
+//Exit pop up
+
+function Exit_popup() {
+  document.getElementById("Exit_popup").classList.add("Active");
+}
+
+function Close_exit_popup() {
+  document.getElementById("Exit_popup").classList.remove("Active");
+}
+
+
 //Functions
 
 function Show_question() {
@@ -391,23 +477,7 @@ function Show_question() {
   Update_progress_bar()
 }
 
-document.querySelectorAll(".Answer").forEach(Button => {
-  Button.addEventListener("click", () => {
-    const Is_correct = Button.dataset.Correct == "true";
 
-    if (Is_correct) {
-      Button.classList.add("Correct");
-      document.getElementById("Feedback").innerText = "Rigtigt!";
-      Score++;
-      document.getElementById("NextBtn").classList.remove("Hidden");
-      document.querySelectorAll(".Answer").forEach(x => x.disabled = true);
-    } else {
-      Button.classList.add("Wrong");
-      document.getElementById("Feedback").innerText = "Forkert!";
-    }
-
-  });
-});
 
 function Next_question() {
   Current_question_index++;
@@ -435,7 +505,7 @@ function Show_result() {
   `;
 }
 
-Show_question()
+
 
 
 window.addEventListener("pageshow", () => {
@@ -485,8 +555,8 @@ function checkMatch() {
     resetBoard();
   } else {
     setTimeout(() => {
-      firstCard.querySelector("img").src = "img/Vendespi_kort.png";
-      secondCard.querySelector("img").src = "img/Vendespi_kort.png";
+      firstCard.querySelector("img").src = "img/Vendespil_kort.png";
+      secondCard.querySelector("img").src = "img/Vendespil_kort.png";
       resetBoard();
     }, 1000);
   }

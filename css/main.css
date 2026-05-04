@@ -185,6 +185,8 @@ Wtf is span TvT
   max-height: 100%;
 }
 
+
+
 /* Main menu */
 
 /* Text and menu pos */
@@ -434,11 +436,14 @@ Wtf is span TvT
   border: 4px solid #b2ff59;
 
   cursor: pointer;
+  padding: 0;
 }
 
 .Map_button img {
   width: 100%;
   height: 100%;
+  
+  display: block;
   object-fit: cover;
 }
 /* The posetions */
@@ -781,7 +786,7 @@ Wtf is span TvT
 }
 
 .Exit_popup.Active {
-  bottom: 35%;
+  bottom: 30%;
 }
 
 .Exit_content {
@@ -798,8 +803,8 @@ Wtf is span TvT
 .Exit_content img{
   position: relative;
   align-self: center;
-  height: auto;
-  width: 250px;
+  height: 200px;
+  width: auto;
   margin: 20px;
 }
 
