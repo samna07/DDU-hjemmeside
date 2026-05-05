@@ -88,6 +88,49 @@ h1 {
     cursor: pointer;
 }
 
+/* Om os sider */
+.Om_os_box{
+  display: grid;
+  
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 24px;
+  font-family: "Fuzzy Bubbles";
+
+  width: 800px;
+  height: 500px;
+  
+  font-size: 28px;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.Om_os_box h2{
+  margin-bottom: -30px;
+}
+
+.Om_os_box img{
+  height: 200px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.Om_os_box a{
+  font-size: 20px;
+  padding: 5px;
+}
+
+.Om_os_center{
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+}
+
+
 /* Login side */
 
 form {

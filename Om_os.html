@@ -1,5 +1,5 @@
 <!--
-Login side
+Forside
 
 - made by Maria and Islam
 -->
@@ -16,32 +16,27 @@ Login side
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
-<body class="Backgrund_start">
+
+<body class="Backgrund_home">
     <nav>
         <a class="Start_menu" onclick="location.href='Om_os.html'">Om Os</a>
         <a class="Start_menu" onclick="location.href='Til_leare.html'">Til Lærere</a>
         <a class="Start_menu" onclick="location.href='Kilder.html'">Kilder</a>
     </nav>
 
-    <main class="Start_menu_titel">
-        <h1>Vadehavets dyr</h1>
-        
-        <div class="center">
-            <form class="Login_menu">
-            <label for="navn">Navn:</label>
-            <input type="text" id="navn" name="navn">
+    <div class="Om_os_center">
+        <main class="Om_os_box">
+            <h2>Om os </h2>
+            <p>Vi er en lille gruppe fra HTX, som udvikler denne hjemmeside til 5. klasse
+                som et interaktivt undervisningsmateriale med håb om at lære mere om verdenshave i Danmark.</p>
+            <p>Af Maria og Islam</p>
+            <p>Kontakt: fake@mail.com</p>
+        </main>
+    </div>
 
-            <label for="klasse">Klasse:</label>
-            <input type="text" id="klasse" name="klasse">
-                
-            <button type="button" class="Submit_login" onclick="Login()">
-                <span>→</span>
-            </button>
-            </form>
-        </div>
-    </main>
-
-    <script src="js/Script.js"></script>
-    
+    <button class="Back_button" onclick="location.href='Forside.html'"> <img src="img/Back_button.png" alt="Back"> </button>
 </body>
 </html>
+
+
+

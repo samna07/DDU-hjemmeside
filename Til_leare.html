@@ -1,5 +1,5 @@
 <!--
-Login side
+Forside
 
 - made by Maria and Islam
 -->
@@ -16,32 +16,29 @@ Login side
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
-<body class="Backgrund_start">
+
+<body class="Backgrund_home">
     <nav>
         <a class="Start_menu" onclick="location.href='Om_os.html'">Om Os</a>
         <a class="Start_menu" onclick="location.href='Til_leare.html'">Til Lærere</a>
         <a class="Start_menu" onclick="location.href='Kilder.html'">Kilder</a>
     </nav>
+    <div class="Om_os_center">
+        <main class="Om_os_box">
+            <h2>Lærer vejledning </h2>
+            <p>Denne hjemmeside er designet i forskellige læringsfaser,
+                og for at sikre den mest effektive læringsoplevelse for elever anbefaler vi, 
+                at eleverne guides gennem hjemmesiden i følgende rækkefølge:</p>
+            <img src="img/Vejlledning.png" alt="Vejlledning">
+            
+            
 
-    <main class="Start_menu_titel">
-        <h1>Vadehavets dyr</h1>
-        
-        <div class="center">
-            <form class="Login_menu">
-            <label for="navn">Navn:</label>
-            <input type="text" id="navn" name="navn">
+        </main>
+    </div>
 
-            <label for="klasse">Klasse:</label>
-            <input type="text" id="klasse" name="klasse">
-                
-            <button type="button" class="Submit_login" onclick="Login()">
-                <span>→</span>
-            </button>
-            </form>
-        </div>
-    </main>
-
-    <script src="js/Script.js"></script>
-    
+    <button class="Back_button" onclick="location.href='Forside.html'"> <img src="img/Back_button.png" alt="Back"> </button>
 </body>
 </html>
+
+
+
