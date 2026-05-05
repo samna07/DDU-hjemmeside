@@ -88,6 +88,10 @@ h1 {
     cursor: pointer;
 }
 
+.Start_navbar{
+  display: flex;
+}
+
 .Start_menu{
   cursor: pointer;
 }
@@ -110,6 +114,13 @@ h1 {
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+
+.Logo img{
+  height: 70px;
+  width: 70px;
+  margin-right: -40px;
+  padding-left: 20px;
 }
 
 .Om_os_box h2{
