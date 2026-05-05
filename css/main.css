@@ -88,6 +88,10 @@ h1 {
     cursor: pointer;
 }
 
+.Start_menu{
+  cursor: pointer;
+}
+
 /* Om os sider */
 .Om_os_box{
   display: grid;
