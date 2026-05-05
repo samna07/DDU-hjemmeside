@@ -548,15 +548,21 @@ function flipCard() {
 }
 
 function checkMatch() {
+  var Name_first = firstCard.dataset.image
+  Name_last_part_1 = Name_first.split("/").pop();
+  
+  var Name_first = secondCard.dataset.image
+  Name_last_part_2 = Name_first.split("/").pop();
+
   const isMatch =
-    firstCard.dataset.image === secondCard.dataset.image;
+    Name_last_part_1 == Name_last_part_2;
 
   if (isMatch) {
     resetBoard();
   } else {
     setTimeout(() => {
-      firstCard.querySelector("img").src = "img/Vendespil_kort.png";
-      secondCard.querySelector("img").src = "img/Vendespil_kort.png";
+      firstCard.querySelector("img").src = "img/Vendespi_kort.png";
+      secondCard.querySelector("img").src = "img/Vendespi_kort.png";
       resetBoard();
     }, 1000);
   }
